@@ -17,7 +17,6 @@ router.get("/sts/token", (req, res) => {
     sts.assumeRole(params, async function(err, data) {
          if (err) console.log(err, err.stack); // an error occurred
          else{
-            let bufferArray = [];
             try {
                 const { Credentials: {AccessKeyId, SecretAccessKey, SessionToken} } = data;
                 const params = {
