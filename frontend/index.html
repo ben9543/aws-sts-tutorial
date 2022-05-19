@@ -4,12 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link
-    rel="stylesheet"
-    href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css"
-    type="text/css"
-    />
-    <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Frontend</title>
 </head>
 <body>
@@ -19,14 +14,18 @@
         <button type="submit">Upload</button>
     </form>
     -->
-    <form id="form" action="http://localhost:3000/api/v1/item" method="post" enctype="multipart/form-data">
-        <input type="file" name="files" />
-        <input hidden type="text" name="bucket" value="demo-ben-replica-20212021"/>
-        <input hidden type="text" name="key" value="123423535.png"/>
-        <input hidden type="text" name="region" value="us-east-1"/>
-        <button type="submit">Upload</button>
-      </form>
-    
+    <div class="flex flex-col items-center justify-center h-screen bg-gray-100">
+        <div style="height:30rem; width: 25rem;" class="bg-white rounded-lg shadow px-4 py-10">
+            <h1 class="text-3xl">Upload to S3</h1>
+            <form id="form" class="flex flex-col items-center justify-center h-full w-full" action="http://localhost:3000/api/v1/item" method="post" enctype="multipart/form-data">
+                <input class="w-full mb-8" type="file" name="files" />
+                <input class="w-full mb-8 h-12 px-2 rounded-lg border" type="text" name="bucket" value="demo-ben-replica-20212021" placeholder="Bucket"/>
+                <input class="w-full mb-8 h-12 px-2 rounded-lg border" type="text" name="key" value="123423535.png" placeholder="Key (Object ID)"/>
+                <input class="w-full mb-8 h-12 px-2 rounded-lg border" type="text" name="region" value="us-east-1" placeholder="Region"/>
+                <button class="w-full bg-gray-700 rounded-lg text-white p-4 hover:bg-gray-900" type="submit">Upload</button>
+            </form>
+        </div>
+    </div>
     <script src="./scripts.js"/>
 </body>
 </html>
