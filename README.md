@@ -6,6 +6,12 @@
 - To use AWS SDK with AWS S3 to upload files.
 - To practice uploading files using frontend and backend using JavaScript & Node js.
 
+## Environment Variables
+
+- `ROLE_ARN_TO_ASSUME`: AWS IAM Role ARN to assume (typically has the permission that user does not have but needs)
+- `AWS_ACCESS_KEY_ID`: AWS IAM credential id
+- `AWS_SECRET_ACCESS_KEY`: AWS IAM credential sercret
+
 ## Flows
 1. Client request API server(backend) to upload files.
 2. At the backend, process the reqeust with multer library and store the file to `upload/` directory (middleware)
