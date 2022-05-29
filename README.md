@@ -6,7 +6,7 @@
 - To use AWS SDK with AWS S3 to upload files.
 - To practice uploading files using frontend and backend using JavaScript & Node js.
 
-## Steps
+## Flows
 1. Client request API server(backend) to upload files.
 2. At the backend, process the reqeust with multer library and store the file to `upload/` directory (middleware)
 3. Request temporary credentials from STS. The role ARN that we want to assume needs to be set as `ROLE_ARN_TO_ASSUME` environment variable.
